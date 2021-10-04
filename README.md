@@ -1,2 +1,2 @@
 # All-Coding-Platform-Solutions
-Accepting PR for hacktoberfest 2021
+Accepting Pull Request for hacktoberfest 2021
