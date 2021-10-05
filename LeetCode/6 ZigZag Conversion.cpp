@@ -1,26 +1,38 @@
-using namespace std;
+#include <bits/stdc++.h>
+
 class Solution {
 public:
-    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-       
-        vector<int> ans(nums1.size()+nums2.size());
+    string convert(string s, int numRows) {
+        vector<char> v[numRows];
         
-        merge(nums1.begin(),nums1.end(),nums2.begin(),nums2.end(),ans.begin());
-        
-        int a=ans.size();
-        
-        if(a==1)
+        bool pry=false;
+        int chk=0;
+        if(numRows==1)
+            return s;
+        for(int i=0;i<s.size();i++)
         {
-            return ans[0];
+            
+            if(chk==0)
+                pry=true;
+            if(chk==numRows-1)
+                pry=false;
+            
+            
+            v[chk].push_back(s[i]);
+            
+            if(pry==true)
+                chk++;
+            else
+                chk--;
         }
-        else if(a%2!=0)
+        string ans="";
+        for(int i=0;i<numRows;i++)
         {
-            return ans[a/2]/1.0;
+            for(int j=0;j<v[i].size();j++)
+            {
+                ans+=v[i][j];
+            }
         }
-        else
-        {
-            return (ans[(a/2)-1]+ans[a/2])/2.0;
-        }
-        
+        return ans;
     }
 };
