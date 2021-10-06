@@ -11,23 +11,21 @@ Hacktoberfest is open to everyone in our global community. Whether you’re a se
     3. Add a file.
     4. commit the code.
     5. Make pull request.
-    6. Link your pull request to the issue assigned.
+    6. Link your pull request to the issue assigned(if any).
 
 ## Guidelines to follow for contribution:
 1. First of all give this repo a ⭐ so that more open source enthusiasts get to know about this repo and can get started with their open source journey. 
 2. You can add code in any language.
 3. Accepting code of questions from different coding platform (Codechef, Leetcode, Codeforces, Interviewbit)
 4. Only submit PRs for problems that aren't already in the repo, and make sure that no one else has submitted a PR for the same issue.
-5. Use proper file naming conventions (camel casing), for example, if you're giving a PR for a two-sum problem, the file name should be twoSum.cpp, and the file name should   be self-explanatory as to what problem you're solving.
+5. Use proper file naming conventions (camel casing), for example, if you're giving a PR for a two-sum problem, the file name should be twoSum.cpp, and the file name should   be self-explanatory as to what problem you're solving. If there is any problem code or problem number for any problem it is mandatory to add it in prexfix.
+
+    Format: ```problem_code problem_name.file_extension```
+
+    Example: ```FODCHAIN Food Chain.cpp```
+            ```70 Climbing Stairs.cpp```
 6. Please include a detailed explanation of the situation for which you are offering a solution.
 7. Link your pull request to the issue assigned.
 
-## ⚠️ Rules
-- Pull requests can be submitted to any opted-in repository on GitHub or GitLab.
-- The pull request must contain commits you made yourself.
-- If a maintainer reports your pull request as spam, it will not be counted toward your participation in Hacktoberfest 2021.
-- If a maintainer reports behavior that’s not in line with the project’s code of conduct, you will be ineligible to participate.
-- File format should be correct (If you are using c++ it should be .cpp, according to the language you are using).
-- To get a shirt, you must make four approved pull requests (PRs) on opted-in projects between October 1-31 in any time zone.
-- This year, the first 50,000 participants can earn a T-shirt.
+
 ---
