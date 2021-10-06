@@ -26,6 +26,39 @@ P.S. Star and share this repository, if you had fun!
     5. Make pull request.
     6. Link your pull request to the issue assigned(if any).
 
+## How to Fork and make a Pull request:
+  1. After logging in with your Github account, The button on the top right of page responds to forking any currently viewing repo.
+  2. Upon on forking a repo, you'll find a repo created in your repos. From here all the changes made are reflected in your own repo.
+  3. After making all of your contributions and changes, you can open a new pull request, which let's the owners and editors of the master repo to see the contributions you make a decision to merge the request or request for some changes
+  4. To make a pull request, go to your forked repo in your repos and in code tab or also known as first page you can see a button to contribute, upon clicking that you see a button to open pull request.
+  5. Github checks if there are any issues with the changes you have made and when all things are set right, it lets to make a pull request, but before making pull request, You are kindly requested add comments about the commits you have done.
+  6. After making pull request, the editors may request to make some changes in your changes you have done, after making the changes and commitng again you can let editors know about the changes in the comments of your pull request on the original repos pull request page.
+  7. After pull requests are merged, you are now officially a contibutor of the project, Congratulations!!
+## Git commands
+- ```clone```: 
+  - Usage: `git clone` is a Git command line utility which is used to target an existing repository and create a clone, or copy of the target repository.<br/>
+   `git clone <git-repo-link>` [More about command here](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone)
+  - Example: `git clone https://github.com/lokeshtejavath/passgen.git`
+- ```add```:
+  - Usage:The `git add` command adds a change in the working directory to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
+  <br/> 
+  `git add <directory>` [More about command here](https://www.atlassian.com/git/tutorials/saving-changes#:~:text=git%20ignore%20page.-,git%20add,until%20you%20run%20git%20commit%20.)
+  - Example: `git add .` -> for whole current working directory
+
+- ```commit```:
+  - Usage: The `git commit` command captures a snapshot of the project's currently staged changes. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to.
+  <br/>
+   `git commit -m"<comment>"` [More about command here](https://www.atlassian.com/git/tutorials/saving-changes/git-commit)
+  - Example: `git commit -m"added the brainFuck file"`
+- ```push```:
+  - Usage: The `git push` command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo. 
+  <br/>
+  `git push` [More about command here](https://www.atlassian.com/git/tutorials/syncing/git-push)
+- ```fetch```:
+  - Usage:The git fetch command downloads commits, files, and refs from a remote repository into your local repo. 
+  <br/>
+  `git fetch` [More about command here](https://www.atlassian.com/git/tutorials/syncing/git-fetch)
+
 ## Guidelines to follow for contribution:
 1. First of all give this repo a ⭐ so that more open source enthusiasts get to know about this repo and can get started with their open source journey. 
 2. You can add code in any language.
