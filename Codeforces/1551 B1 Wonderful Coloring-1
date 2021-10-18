@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+void solve()
+{
+	string s;
+	cin>>s;
+	int freq[26]{0};
+	int ans=0;
+	//int c[s.length()];
+	int c1=0,c2=0;
+	for(int i=0;i<s.length();i++)
+	{
+		if(freq[s[i]-'a']<2)
+		{
+			freq[s[i]-'a']++;
+			ans%2 ? c2++:c1++;
+			ans++;
+		}
+	}
+	// if(c1==c2) cout<<c1<<"\n";
+	// else 
+	cout<<min(c1,c2)<<"\n";
+	
+	//cout<<ans<<"\n";
+}
+ 
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		solve();
+	}
+}
