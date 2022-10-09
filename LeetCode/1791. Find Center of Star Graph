@@ -1,0 +1,21 @@
+
+class Solution {
+public:
+    int findCenter(vector<vector<int>>& edges) {
+        int n = edges.size()+1;
+        vector<int>test(n+1,0);
+        for(int i=0;i<edges.size();i++){
+            test[edges[i][0]]++;
+            test[edges[i][1]]++;
+        }
+        int max =0,j=0;
+        for(int i=0;i<=n;i++){
+            if(max<test[i]){
+                max = test[i];
+                j=i;
+            }
+            
+        }
+        return j;
+    }
+};
