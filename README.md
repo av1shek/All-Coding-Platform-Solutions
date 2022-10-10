@@ -36,29 +36,31 @@ P.S. Star and share this repository, if you had fun!
   6. After making pull request, the editors may request to make some changes in your changes you have done, after making the changes and commitng again you can let editors know about the changes in the comments of your pull request on the original repos pull request page.
   7. After pull requests are merged, you are now officially a contibutor of the project, Congratulations!!
 ## Git commands
-- ```clone```: 
-  - Usage: `git clone` is a Git command line utility which is used to target an existing repository and create a clone, or copy of the target repository.<br/>
-   `git clone <git-repo-link>` [More about command here](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone)
-  - Example: `git clone https://github.com/lokeshtejavath/passgen.git`
-- ```add```:
-  - Usage:The `git add` command adds a change in the working directory to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
-  <br/> 
-  `git add <directory>` [More about command here](https://www.atlassian.com/git/tutorials/saving-changes#:~:text=git%20ignore%20page.-,git%20add,until%20you%20run%20git%20commit%20.)
-  - Example: `git add .` -> for whole current working directory
+* Fork this repository (Click the Fork button in the top right of this page, click your Profile Image)
+* Clone your fork down to your local machine
 
-- ```commit```:
-  - Usage: The `git commit` command captures a snapshot of the project's currently staged changes. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to.
-  <br/>
-   `git commit -m"<comment>"` [More about command here](https://www.atlassian.com/git/tutorials/saving-changes/git-commit)
-  - Example: `git commit -m"added the brainFuck file"`
-- ```push```:
-  - Usage: The `git push` command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo. 
-  <br/>
-  `git push` [More about command here](https://www.atlassian.com/git/tutorials/syncing/git-push)
-- ```fetch```:
-  - Usage:The git fetch command downloads commits, files, and refs from a remote repository into your local repo. 
-  <br/>
-  `git fetch` [More about command here](https://www.atlassian.com/git/tutorials/syncing/git-fetch)
+```markdown
+git clone https://github.com/your-username/hacktoberfest.git
+```
+
+* Create a branch
+
+```markdown
+git checkout -b branch-name
+```
+
+* Make your changes
+* Commit and push
+
+```markdown
+git add .
+git commit -m 'Commit message'
+git push origin branch-name
+```
+
+* __Star this repository__ 
+* Create a new pull request from your forked repository (Click the `New Pull Request` button located at the top of your repo)
+* Wait for your PR review and merge approval!
 
 ## Guidelines to follow for contribution:
 1. First of all give this repo a ⭐ so that more open source enthusiasts get to know about this repo and can get started with their open source journey. 
