@@ -1,0 +1,84 @@
+class Solution {
+public:
+//     int dr[4]={-1,0,1,0};
+//     int dc[4]={0,1,0,-1};
+//     // int memo[51][51][51]{0};
+//     int helper(int m, int n, int maxMove, int sr, int sc,vector<vector<vector<int>>> &dp)
+//     {
+//         if(sr<0||sc<0) return 1;
+//         if(sr>=m||sc>=n) return 1;
+//         if(maxMove==0) return dp[sr][sc][maxMove]=0;
+//         if(dp[maxMove][sr][sc]!=0) return dp[sr][sc][maxMove]%(int)(1e9+7);
+//         int temp=0;
+//         for(int i=0;i<4;i++)
+//         {
+//             temp=(temp+(helper(m,n,maxMove-1,sr+dr[i],sc+dc[i],dp)%(int)(1e9+7)))%(int)(1e9+7);
+//         }
+//         return dp[sr][sc][maxMove]=temp;
+//     }
+//     int findPaths(int m, int n, int maxMove, int sr, int sc) {
+        
+//         vector<vector<vector<int>>> dp(m+1, vector<vector<int>>(n+1, vector<int>(maxMove+1, -1)));
+//         return helper(m,n,maxMove,sr,sc,dp);
+//     }
+    
+    // int findPaths(int m, int n, int maxMove, int sr, int sc)
+    // {
+    //     int dp[maxMove+1][m+1][n+1];
+    //     for(int i=0;i<=maxMove;i++)
+    //     {
+    //         for(int j=0;j<=m;j++)
+    //         {
+    //             for(int k=0;k<=n;k++)
+    //             {
+    //                 // if(j>=m||k>=n)
+    //                 // {
+    //                 //     dp[i][j][k]=1;
+    //                 //     continue;
+    //                 // }
+    //                 if(maxMove==0) 
+    //                 {
+    //                     dp[i][j][k]=0;
+    //                     continue;
+    //                 }
+    //                 int temp=0;
+    //                 for(int l=0;l<4;l++)
+    //                 {
+    //                     if(sr+dr[l]>=0&&sr+dr[l]<m&&sc+dc[l]>=0&&sc+dc[l]<n)
+    //                     temp=(temp+(dp[maxMove-1][sr+dr[l]][sc+dc[l]]%(int)(1e9+7)))%(int)(1e9+7);
+    //                     else if(sr+dr[l]==m&&sc+dc[l]==n)
+    //                         dp[maxMove-1][sr+dr[l]][sc+dc[l]]=1;
+    //                 }
+    //                 dp[i][j][k]=temp;
+    //             }
+    //         }
+    //     }
+    //     return dp[maxMove][sr][sc];
+    // }
+    long int mod = 1e9+7;
+   int utility(int m, int n, int max, int i, int j, vector<vector<vector<int>>>&dp)
+    {
+       
+        if(i==m || j==n || i<0 || j<0)
+            return 1;
+    
+        if(max<=0) 
+            return 0;
+       
+        if(dp[i][j][max] != -1 ) return dp[i][j][max];
+       
+        int left = utility(m, n, max-1, i+1, j, dp);
+        int right = utility(m, n, max-1, i, j+1, dp);
+        int up = utility(m, n, max-1, i-1, j, dp);
+        int down = utility(m, n, max-1, i, j-1, dp);
+       
+        return dp[i][j][max] = (left%mod + right%mod + up%mod + down%mod) % mod;
+    }
+    
+    int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
+       
+        vector<vector<vector<int>>> dp(m, vector<vector<int>>(n, vector<int>(maxMove+1, -1)));
+        return utility(m, n, maxMove, startRow, startColumn, dp);
+        
+    }
+};
