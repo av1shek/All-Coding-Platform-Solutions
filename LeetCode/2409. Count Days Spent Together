@@ -1,0 +1,33 @@
+class Solution {
+    bool grt(string a, string b){
+        return a>b;
+    }
+public:
+    int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
+        if(leaveAlice<arriveBob || leaveBob<arriveAlice) return 0;
+        string init, last;
+        // if first arg is later in the year
+        if(grt(arriveAlice, arriveBob)){
+            init = arriveAlice;
+        }else{
+            init = arriveBob;
+        }
+        if(grt(leaveAlice, leaveBob)){
+            last = leaveBob;
+        }else{
+            last = leaveAlice;
+        }
+        //days in a month
+        vector<int> dm{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int d1 = (init[3]-'0')*10+(init[4]-'0'),
+            d2 = (last[3]-'0')*10+(last[4]-'0'),
+            m1 = (init[0]-'0')*10+(init[1]-'0'),
+            m2 = (last[0]-'0')*10+(last[1]-'0');
+        int ans=0;
+        for(int i=m1;i<=m2;i++){
+            ans += dm[i];
+        }
+        ans -= (d1-1+dm[m2]-d2);
+        return ans;
+    }
+};
