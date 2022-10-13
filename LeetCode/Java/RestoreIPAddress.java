@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+class RestoreIpAddress {
     public List<String> restoreIpAddresses(String s) {
         List<String> result = new ArrayList<>();
         if(s.length() < 4)
