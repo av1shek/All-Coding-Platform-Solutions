@@ -5,7 +5,7 @@ The first line of the input contains T denoting the number of testcases. First l
 N denoting the size of the array and an integer D denoting the number size of the rotation. Subsequent line will be the N space separated array elements.
 
 Output:
-For each testcase, in a new line, output the rotated array.
+For each testcase, in a new line, output the rotated arrays.
   
 Example:
 Input:
