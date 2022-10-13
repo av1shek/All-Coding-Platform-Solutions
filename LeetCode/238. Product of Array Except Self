@@ -1,0 +1,36 @@
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int pro=1;
+        vector<int> ans;
+        int zerocount=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]==0){
+                zerocount++; 
+            }
+            pro *= nums[i];
+        }
+        if(zerocount==0){
+        for(int i=0;i<nums.size();i++)
+            ans.push_back(pro/nums[i]);
+        return ans;
+        }
+        else if(zerocount>1){
+            ans=vector<int> (nums.size(),0);
+            return ans;
+        }
+        else{
+            int p=1;
+            int idx;
+            for(int i=0;i<nums.size();i++){
+                if(nums[i]!=0)
+                    p *= nums[i];
+                else
+                    idx=i;
+            }
+            ans=vector<int> (nums.size(),0);
+            ans[idx]=p;
+        }
+        return ans;
+    }
+};
