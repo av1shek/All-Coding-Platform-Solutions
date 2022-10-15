@@ -1,0 +1,27 @@
+class Solution {
+public:
+    static bool compare(vector<int> a, vector<int> b){
+        return a[1]<b[1];
+    }
+    
+    int hardestWorker(int n, vector<vector<int>>& logs) {
+        sort(logs.begin(), logs.end(), compare);
+        
+        int t  = 0;
+        int ans = -1, mx = -1;
+        for(int i=0 ;i<logs.size() ; i++){
+            int w = logs[i][1]-t;
+            if(w==mx){
+                ans = min(ans, logs[i][0]);
+            }
+            else if(w>mx){
+                mx = w;
+                ans = logs[i][0];
+            }
+            t = logs[i][1];
+        }
+        
+
+        return ans;
+    }
+};

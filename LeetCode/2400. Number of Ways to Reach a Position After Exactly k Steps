@@ -1,0 +1,19 @@
+#define mod 1000000007
+class Solution {
+    vector<vector<int>> dp;
+    int recur(int startPos, int endPos, int k){
+        if(k==0) return (startPos==endPos);
+        if(dp[startPos+1000][k]!=-1) return dp[startPos+1000][k];
+        return dp[startPos+1000][k]=((1ll*recur(startPos+1, endPos, k-1)+recur(startPos-1, endPos, k-1))%mod);
+    }
+public:
+    int numberOfWays(int startPos, int endPos, int k) {
+        dp.resize(5000, vector<int>(1001, -1));
+        return recur(startPos, endPos, k);
+        // vector<vector<int>> dp(k+1, vector<int>(2*k+2,0));
+        // dp[endPos][]
+        // for(int i=1;i<=k;i++){
+        //     for(int j=0;j<)
+        // }
+    }
+};
