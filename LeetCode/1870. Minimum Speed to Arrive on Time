@@ -1,0 +1,34 @@
+class Solution {
+public:
+    bool check(vector<int>& dist,int mid,double hour)
+    {
+        double time=0;
+        for(int i=0;i<dist.size()-1;i++)
+        {
+            if(i<dist.size()-1)
+            time+=ceil((double)dist[i]/mid);
+        }
+        time+=(double)dist.back()/mid;
+        return time<=hour;
+    }
+    int minSpeedOnTime(vector<int>& dist, double hour) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        
+        int l=1,r=1e7,ans=-1;
+        while(l<=r)
+        {
+            int mid=l+(r-l)/2;
+            if(check(dist,mid,hour))
+            {
+                ans=mid;
+                r=mid-1;
+            }
+            else
+            {
+                l=mid+1;
+            }
+        }
+        return ans;
+    }
+};
