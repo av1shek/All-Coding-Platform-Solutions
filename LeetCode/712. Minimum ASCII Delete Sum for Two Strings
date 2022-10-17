@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int minimumDeleteSum(string s1, string s2) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        
+        int sum=0;
+        for(char i:s1) sum+=i;
+        for(char i:s2) sum+=i;
+        
+        int m=s1.size(),n=s2.size();
+        int lk[m+1][n+1];
+        memset(lk,0,sizeof(lk));
+        
+        for(int i=1;i<=m;i++)
+        {
+            for(int j=1;j<=n;j++)
+            {
+                if(s1[i-1]==s2[j-1])
+                {
+                    lk[i][j]=lk[i-1][j-1]+(int)(s1[i-1]);
+                }
+                else lk[i][j]=max(lk[i-1][j],lk[i][j-1]);
+            }
+        }
+        return sum-2*lk[m][n];
+    }
+};
