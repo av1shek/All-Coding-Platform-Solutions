@@ -1,5 +1,49 @@
 class Solution {
 public:
+    void dfs_helper(vector<int> graph[],int vert,vector<bool> &vis)
+    {
+        vis[vert]=true;
+        for(int i=0;i<graph[vert].size();i++)
+        {
+            if(!vis[graph[vert][i]])
+            {
+                dfs_helper(graph,graph[vert][i],vis);
+            }
+        }
+    }
+    int rec_dfs(vector<int> graph[],int n)
+    {
+        vector<bool> vis(n,false);
+        int ans=0;
+        for(int i=0;i<n;i++)
+        {
+            if(!vis[i])
+            {
+                ans++;
+                dfs_helper(graph,i,vis);
+            }
+        }
+        return ans-1;
+    }
+    int makeConnected(int n, vector<vector<int>>& connections) {
+        if(connections.size()<n-1) return -1;
+        vector<int> graph[n];
+        for(int i=0;i<connections.size();i++)
+        {
+            int a,b;
+            a=connections[i][0];
+            b=connections[i][1];
+            graph[a].push_back(b);
+            graph[b].push_back(a);
+        }
+        // for(int i=0;i<n;i++)
+        // {
+        //     cout<<i<<" -> ";
+        //     for(int j=0;j<graph[i].size();j++) cout<<graph[i][j]<<" ";
+        //     cout<<"\n";
+        // }
+        return rec_dfs(graph,n);
+    }
     int tar;
 bool solve(int i,int n,vector<int>&res,vector<int>&ms){
    if(i>=n){
