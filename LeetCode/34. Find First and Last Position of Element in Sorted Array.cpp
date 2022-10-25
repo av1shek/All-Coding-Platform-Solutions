@@ -15,7 +15,7 @@ public:
         }
         return ans;
     }
-    
+
     int UB(vector<int> nums, int target){
         int l=0, h=nums.size()-1, mid, ans=-1;
         while(l<=h){
